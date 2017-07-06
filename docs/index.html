@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>3d</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+            .plate {
+                width: 90vw; 
+                height: 90vh; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .wrapper {
+                background-image: url(bg.jpg);
+                background-size: cover;
+                background-position: center center;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                min-height: 100vh;
+                position:  relative;
+            }         
+            .pixel-perfect {
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url(pixel-perfect.jpg);
+                z-index: 1000;
+                opacity: 0.5;
+                display: none;
+            }
+            .squares {
+                width: 90vw;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="pixel-perfect"></div>
+    <div class="wrapper">
+    <div id="plate-default" class="plate">
+    <img src="squares.svg" class="squares" alt="">
+    </div>        
+    </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="jquery.plate.js"></script>
+        <script>
+            $('#plate-default').plate();
+        </script>
+    </body>
+</html>
